@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Hospital Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/staff">Staff Management</a></li>
+                <li><a href="/patients">Patient Management</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Staff Details</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Department</th>
+                    <th>Contact</th>
+                    <th>Availability</th>
+                    <th>Join Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% staffList.forEach(staff => { %>
+                    <tr>
+                        <td><%= staff.name %></td>
+                        <td><%= staff.role %></td>
+                        <td><%= staff.department %></td>
+                        <td><%= staff.contactNumber %></td>
+                        <td><%= staff.isAvailable ? "Available" : "Not Available" %></td>
+                        <td><%= staff.joinDate.toLocaleDateString() %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <button onclick="window.location.href='/staff/new'">Add New Staff Member</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hospital Management System</p>
+    </footer>
+</body>
+</html>

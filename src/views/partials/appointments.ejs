@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Appointments</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Manage Appointments</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/doctors">Manage Doctors</a></li>
+                <li><a href="/patients">Manage Patients</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Appointment List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Patient Name</th>
+                        <th>Doctor Name</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% appointments.forEach(appointment => { %>
+                    <tr>
+                        <td><%= appointment.patient_name %></td>
+                        <td><%= appointment.doctor_name %></td>
+                        <td><%= appointment.date %></td>
+                        <td><%= appointment.status %></td>
+                    </tr>
+             <%  }) %>
+                </tbody>
+            </table>
+            <button onclick="window.location.href='/appointments/new'">Add Appointment</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Hospital Management System</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "hospital-management",
+  "version": "1.0.0",
+  "description": "This is a Hospital Management application Developing and Deploying using Type Script. ",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && copyfiles -u 1 src/views dist/views",
+    "start": "npm run build && nodemon dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/habeebvalancheri/Hospital-Management.git"
+  },
+  "author": "Muhammed Habeeb Valancheri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/habeebvalancheri/Hospital-Management/issues"
+  },
+  "homepage": "https://github.com/habeebvalancheri/Hospital-Management#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "nodemon": "^3.1.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "copyfiles": "^2.4.1",
+    "express": "^4.21.1"
+  }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Medical Record</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Hospital Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/patients">Patient Management</a></li>
+                <li><a href="/appointments">Appointments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="patient-info">
+            <h2>Patient Medical Record</h2>
+            <div class="info">
+                <p><strong>Name:</strong> <%= patient.name %></p>
+                <p><strong>Age:</strong> <%= patient.age %></p>
+                <p><strong>Gender:</strong> <%= patient.gender %></p>
+                <p><strong>Contact:</strong> <%= patient.contactNumber %></p>
+                <p><strong>Address:</strong> <%= patient.address %></p>
+                <p><strong>Blood Type:</strong> <%= patient.bloodType %></p>
+            </div>
+        </section>
+
+        <section class="medical-history">
+            <h3>Medical History</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Visit Type</th>
+                        <th>Diagnosis</th>
+                        <th>Treatment</th>
+                        <th>Doctor</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% medicalRecords.forEach(record => { %>
+                        <tr>
+                            <td><%= new Date(record.date).toLocaleDateString() %></td>
+                            <td><%= record.visitType %></td>
+                            <td><%= record.diagnosis %></td>
+                            <td><%= record.treatment %></td>
+                            <td><%= record.doctor %></td>
+                            <td><%= record.notes %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="add-record">
+            <h3>Add New Record</h3>
+            <form action="/patients/<%= patient.id %>/medicalRecord" method="POST">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="visitType">Visit Type:</label>
+                <select id="visitType" name="visitType" required>
+                    <option value="Checkup">Checkup</option>
+                    <option value="Emergency">Emergency</option>
+                    <option value="Follow-up">Follow-up</option>
+                    <option value="Surgery">Surgery</option>
+                </select>
+
+                <label for="diagnosis">Diagnosis:</label>
+                <input type="text" id="diagnosis" name="diagnosis" required>
+
+                <label for="treatment">Treatment:</label>
+                <input type="text" id="treatment" name="treatment" required>
+
+                <label for="doctor">Doctor:</label>
+                <input type="text" id="doctor" name="doctor" required>
+
+                <label for="notes">Notes:</label>
+                <textarea id="notes" name="notes"></textarea>
+
+                <button type="submit">Add Record</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hospital Management System</p>
+    </footer>
+</body>
+</html>

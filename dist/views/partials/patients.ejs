@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Patients</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Manage Patients</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/appointments">Manage Appointments</a></li>
+                <li><a href="/doctors">Manage Doctors</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Patient List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Contact</th>
+                        <th>Address</th>
+                        <th>Medical History</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% patients.forEach(patient => { %>
+                        <tr>
+                            <td><%= patient.name %></td>
+                            <td><%= patient.age %></td>
+                            <td><%= patient.gender %></td>
+                            <td><%= patient.phone_number %></td>
+                            <td><%= patient.address %></td>
+                            <td><%= patient.medical_history %></td>
+                        </tr>
+                 <%  }) %>
+                </tbody>
+            </table>
+            <button onclick="window.location.href='/patients/new'">Add Patient</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Hospital Management System</p>
+    </footer>
+</body>
+</html>
