@@ -1,13 +1,13 @@
 import { Pool } from 'pg';
-
+import dotenv from 'dotenv';
 
 //  Defining Client configuration
 const pool = new Pool({
-  user : 'postgres',  // User Name
-  host : 'localhost', // Host Name
-  database : 'postgres', // Database Name
-  password : 'newpassword', // User Password
-  port : 5432, // PostgreSQL Default port.
+  user : process.env.DB_user,  // User Name
+  host : process.env.DB_HOST,      // Host Name
+  database : process.env.DB_NAME, // Database Name
+  password : process.env.DB_PASSWORD, // User Password
+  port : Number(process.env.DB_PORT), // PostgreSQL Default port.
 });
 
 

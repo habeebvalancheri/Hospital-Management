@@ -37,7 +37,6 @@ exports.handleCreatePatients = handleCreatePatients;
 const showPatients = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const patients = yield (0, PatientService_1.getPatients)();
-        console.log(patients);
         res.render('partials/patients', { title: 'Hostpital Management System', patients });
     }
     catch (err) {

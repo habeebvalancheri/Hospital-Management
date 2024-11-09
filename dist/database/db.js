@@ -13,11 +13,11 @@ exports.connectDB = exports.pool = void 0;
 const pg_1 = require("pg");
 //  Defining Client configuration
 const pool = new pg_1.Pool({
-    user: 'postgres', // User Name
-    host: 'localhost', // Host Name
-    database: 'postgres', // Database Name
-    password: 'newpassword', // User Password
-    port: 5432, // PostgreSQL Default port.
+    user: process.env.DB_user, // User Name
+    host: process.env.DB_HOST, // Host Name
+    database: process.env.DB_NAME, // Database Name
+    password: process.env.DB_PASSWORD, // User Password
+    port: Number(process.env.DB_PORT), // PostgreSQL Default port.
 });
 exports.pool = pool;
 // connect to database

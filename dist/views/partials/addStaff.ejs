@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Staff Member</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Hospital Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/staff">Staff Management</a></li>
+                <li><a href="/patients">Patient Management</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Add New Staff Member</h2>
+        <form action="/staff/add" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="role">Role:</label>
+            <select id="role" name="role" required>
+                <option value="Doctor">Doctor</option>
+                <option value="Nurse">Nurse</option>
+                <option value="Admin">Admin</option>
+                <option value="Technician">Technician</option>
+                <option value="Receptionist">Receptionist</option>
+                <option value="Pharmacist">Pharmacist</option>
+                <option value="Janitor">Janitor</option>
+            </select>
+
+            <label for="department">Department:</label>
+            <input type="text" id="department" name="department" required>
+
+            <label for="contactNumber">Contact Number:</label>
+            <input type="tel" id="contactNumber" name="contactNumber" required>
+
+            <label for="availability">Availability:</label>
+            <select id="availability" name="isAvailable">
+                <option value="true">Available</option>
+                <option value="false">Not Available</option>
+            </select>
+
+            <label for="joinDate">Join Date:</label>
+            <input type="date" id="joinDate" name="joinDate" required>
+
+            <button type="submit">Add Staff Member</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hospital Management System</p>
+    </footer>
+</body>
+</html>

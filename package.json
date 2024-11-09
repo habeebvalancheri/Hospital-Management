@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/habeebvalancheri/Hospital-Management#readme",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "nodemon": "^3.1.7"
   },

@@ -31,7 +31,6 @@ const handleCreateAppointment = (req, res) => __awaiter(void 0, void 0, void 0, 
         res.redirect('/appointments');
     }
     catch (err) {
-        console.error(err);
         res.status(500).send('Error creating appointment');
     }
 });
