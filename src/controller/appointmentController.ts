@@ -31,6 +31,7 @@ export const handleCreateAppointment = async (req: Request, res: Response ) => {
 export const showAppoinments = async (req: Request, res : Response) => {
 try{
   const appointments = await getAppointment();
+  console.log(appointments)
   res.render('partials/appointments', { title: 'Hospital Management System' ,appointments });
 }catch(err){
   res.status(500).send('Error fetching appointments');

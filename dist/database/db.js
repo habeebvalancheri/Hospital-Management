@@ -8,12 +8,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.connectDB = exports.pool = void 0;
 const pg_1 = require("pg");
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 //  Defining Client configuration
 const pool = new pg_1.Pool({
-    user: process.env.DB_user, // User Name
+    user: process.env.DB_USER, // User Name
     host: process.env.DB_HOST, // Host Name
     database: process.env.DB_NAME, // Database Name
     password: process.env.DB_PASSWORD, // User Password

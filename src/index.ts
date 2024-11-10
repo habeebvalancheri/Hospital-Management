@@ -1,7 +1,10 @@
 import express from 'express';
 import routes from './routes'; // Import the routes.
 import path from 'path';
+import dotenv from 'dotenv';
 const app = express();
+
+dotenv.config();
 
 // set View engine to EJS.
 app.set('view engine','ejs');

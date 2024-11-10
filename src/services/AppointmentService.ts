@@ -15,7 +15,7 @@ export const createAppointment = async (appointment : Appointments) => {
 
 export const getAppointment = async () => {
   const query = `SELECT * FROM appointments;`;
-
+  
   const result = await pool.query(query);
   return result.rows;
 };

@@ -38,6 +38,7 @@ exports.handleCreateAppointment = handleCreateAppointment;
 const showAppoinments = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const appointments = yield (0, AppointmentService_1.getAppointment)();
+        console.log(appointments);
         res.render('partials/appointments', { title: 'Hospital Management System', appointments });
     }
     catch (err) {

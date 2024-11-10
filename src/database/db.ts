@@ -1,9 +1,11 @@
 import { Pool } from 'pg';
 import dotenv from 'dotenv';
 
+dotenv.config();
+
 //  Defining Client configuration
 const pool = new Pool({
-  user : process.env.DB_user,  // User Name
+  user : process.env.DB_USER,  // User Name
   host : process.env.DB_HOST,      // Host Name
   database : process.env.DB_NAME, // Database Name
   password : process.env.DB_PASSWORD, // User Password
